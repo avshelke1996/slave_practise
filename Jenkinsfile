@@ -8,6 +8,7 @@ pipeline{
     stages{
         stage("clean"){
             steps{
+                sh "sudo su -"
                 echo "clean"
                 
                 sh '''
