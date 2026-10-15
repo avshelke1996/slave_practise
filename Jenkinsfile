@@ -8,11 +8,10 @@ pipeline{
     stages{
         stage("clean"){
             steps{
-                sh "sudo su -"
                 echo "clean"
                 
                 sh '''
-                CONTAINERS=$(sudo docker ps -q)
+                CONTAINERS=$(docker ps -q)
                 echo "+++++++++++++++${CONTAINERS}"
                 if [ -n "sudo ${CONTAINERS}" ]
                 then
