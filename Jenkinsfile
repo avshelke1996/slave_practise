@@ -12,7 +12,7 @@ pipeline{
                 echo "clean"
                 
                 sh '''
-                CONTAINERS=$(docker ps -q)
+                CONTAINERS=$(sudo docker ps -q)
                 echo "+++++++++++++++${CONTAINERS}"
                 if [ -n "${CONTAINERS}" ]
                 then
