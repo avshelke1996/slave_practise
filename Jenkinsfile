@@ -11,9 +11,9 @@ pipeline{
                 echo "clean"
                 
                 sh '''
-                CONTAINERS=$(docker ps -q)
+                CONTAINERS=$(sudo docker ps -q)
                 echo "+++++++++++++++${CONTAINERS}"
-                if [ -n "sudo ${CONTAINERS}" ]
+                if [ -n "${CONTAINERS}" ]
                 then
                     sudo docker stop ${CONTAINERS} && sudo docker rm ${CONTAINERS}
                 else
