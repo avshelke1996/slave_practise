@@ -27,7 +27,7 @@ pipeline{
             steps{
                 echo "build"
                 sh "sudo chmod 777 index.html"
-                sh "sudo docker run -dp 80:80 --name s3 httpd"
+                sh "sudo docker run -dp 89:80 --name s3 httpd"
                 sh "sudo docker cp index.html s3:/usr/local/apache2/htdocs"
             }
         }
